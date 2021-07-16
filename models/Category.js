@@ -1,9 +1,11 @@
+// Obtains necessary elements from modules and files.
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection.js');
 
-class Category extends Model {}
+// This table will hold all of the category types.
+class Category extends Model { }
 
+// Sets up fields and rules for the Category model.
 Category.init(
   {
     id: {
@@ -26,4 +28,5 @@ Category.init(
   }
 );
 
+// Exporting the new model for use elsewhere.
 module.exports = Category;

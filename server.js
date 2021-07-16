@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
-// This statement will connect to the database before starting the Express.js server.
+// This statement will connect to the database and sync it before starting the Express.js server.
 sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}!`);

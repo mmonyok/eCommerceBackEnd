@@ -1,9 +1,11 @@
+// Obtains necessary elements from modules and files.
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection.js');
 
-class Tag extends Model {}
+// This table will hold all of the tag types.
+class Tag extends Model { }
 
+// Sets up fields and rules for the Tag model.
 Tag.init(
   {
     id: {
@@ -25,4 +27,5 @@ Tag.init(
   }
 );
 
+// Exporting the new model for use elsewhere.
 module.exports = Tag;

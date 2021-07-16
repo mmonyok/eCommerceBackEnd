@@ -1,10 +1,11 @@
+// Obtains necessary elements from modules and files.
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// This table will hold all of our product types.
-class Product extends Model {}
+// This table will hold all of the product types.
+class Product extends Model { }
 
-// set up fields and rules for Product model
+// Sets up fields and rules for the Product model.
 Product.init(
   {
     id: {
@@ -38,7 +39,7 @@ Product.init(
         model: 'category',
         key: 'id',
       },
-    } ,
+    },
   },
   {
     sequelize,
@@ -49,4 +50,5 @@ Product.init(
   }
 );
 
+// Exporting the new model for use elsewhere.
 module.exports = Product;
